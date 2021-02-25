@@ -9,6 +9,7 @@ def prep_clean():
         time_now = round(time.time())
         if time_now % 2 != 0:
             assert False
+
         yield
 
     except:
@@ -16,4 +17,4 @@ def prep_clean():
 
 
 def test_run(prep_clean):
-    os.listdir(path=".")
+    print(os.listdir(path="."))
