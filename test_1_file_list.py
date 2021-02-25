@@ -1,15 +1,19 @@
 import pytest
 import time
+import os
+
 
 @pytest.fixture()
 def prep_clean():
-    """Connect."""
     try:
-        time_now = time.time()
+        time_now = round(time.time())
+        if time_now % 2 != 0:
+            assert False
         yield
 
     except:
         pass
 
+
 def test_run(prep_clean):
-    pass
+    os.listdir(path=".")
